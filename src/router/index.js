@@ -13,7 +13,6 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory('/'),
-  // history: createWebHistory(!qiankunWindow.__POWERED_BY_QIANKUN__ ? "/travelRecorderPlatform/" : "/yk_operation_platform/travelRecorderPlatform"),
   routes
 });
 

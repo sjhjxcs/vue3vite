@@ -2,7 +2,7 @@ import {defineConfig, loadEnv, splitVendorChunkPlugin} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import name from "./package.json"
-import path from "path";
+import path, { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(( {mode} ) => {
@@ -13,13 +13,12 @@ export default defineConfig(( {mode} ) => {
     resolve: {
         alias: {
             "@": path.resolve(__dirname, 'src'),
+            "@images": resolve('src/assets/images')
         },
         // 忽略后缀名的配置选项, 添加 .vue 选项时要记得原本默认忽略的选项也要手动写入
         extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
     },
     build: {
-    
-  
         outDir: "dist",
         sourcemap: false, //是否构建source map 文件
         rollupOptions: {

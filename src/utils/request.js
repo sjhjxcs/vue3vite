@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
-import { router } from '@/router/index.js'
+import router  from '@/router/index.js'
 import {
     purifyObject,
     purifyObjectPost
@@ -21,15 +21,6 @@ const err = (error) => {
     return Promise.reject(error)
 }
 
-function validateData(data) {
-    // let res = {}
-    // for (let key in data) {
-    //   if (Array.isArray(data[key]) && data[key].length !== 0 || data[key] !== '' && !Array.isArray(data[key])) {
-    //     res[key] = data[key]
-    //   }
-    // }
-    return data
-}
 
 /**
  * @description axios初始化
@@ -58,7 +49,6 @@ instance.interceptors.request.use(
         }
         if (config.data) {
             if (config.method === 'post') {
-                // config.data = validateData(config.data)
                 config.data = purifyObjectPost(config.data)
             } else if (config.method === 'get') {
                 let url = config.url + '?'

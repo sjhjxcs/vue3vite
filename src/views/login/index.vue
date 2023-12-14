@@ -60,9 +60,9 @@
         <el-button type="primary" style="width: 320px" v-dbClick @click="funObj.loginFun(formRef)">登录</el-button>
       </el-form-item>
     </el-form>
-  </div>
+    </div>
 </template>
-<script setup name="login">
+<script setup name="Login">
 import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
 // import { ElMessage, ElMessageBox } from 'element-plus'

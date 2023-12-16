@@ -1,6 +1,10 @@
 <template>
  
     <div class="wholeStyle login">
+
+      <!-- 测试国际化 -->
+      <div class="test">{{ $t('common.edit') }}</div>
+
     <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
       <el-tab-pane label="帐户密码登录" name="account"></el-tab-pane>
       <el-tab-pane label="手机号登录" name="phone"></el-tab-pane>

@@ -1,10 +1,5 @@
 <template>
- 
     <div class="wholeStyle login">
-
-      <!-- 测试国际化 -->
-      <div class="test">{{ $t('common.edit') }}</div>
-
     <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
       <el-tab-pane label="帐户密码登录" name="account"></el-tab-pane>
       <el-tab-pane label="手机号登录" name="phone"></el-tab-pane>
@@ -71,7 +66,13 @@ import { ref, reactive } from "vue";
 import { useRouter } from "vue-router";
 // import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search } from "@element-plus/icons-vue";
+import { CountTo } from 'vue3-count-to';
 
+import countTop from './countTop.vue'
+const val2 = ref(16.6)
+const val = ref(2017)
+const startVal = ref(0);
+const endVal = ref(1000);
 // import {
 //   accountLoginApi,
 //   sendCodeApi,
@@ -142,5 +143,30 @@ const funObj = reactive({
   }
 }
 }
+.count-number {
+  
+}
+.myself {
+        height: 32px;
+        /deep/ .count-flop {
+            height: 32px;
+            line-height: 32px;
+            font-size: 36px;
+            color: red;
+        }
+        /deep/ .count-flop-box {
+            margin-right: 0;
+            width: 22px;
+            border: 0;
+            border-radius: 0;
+            line-height: 32px;
+        }
+        /deep/ .count-flop-point {
+            margin-right: 0;
+        }
+        /deep/ .count-flop-unit {
+            font-size: 25px;
+        }
+    }
 
 </style>
